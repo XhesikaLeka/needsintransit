@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.955" y1="0.984" x2="0.072" y2="0.027" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#76cbba"/>
+      <stop offset="1" stop-color="#268f98"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#76cbba"/>
+      <stop offset="1" stop-color="#268f98" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient-2" x1="0.873" y1="0.908" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#268f98"/>
+      <stop offset="1" stop-color="#76cbba" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.502" y1="0.696" x2="0.789" y2="0.939" xlink:href="#radial-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="0.492" y1="0.021" x2="0.919" y2="1.278" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#76cbba" stop-opacity="0"/>
+      <stop offset="0.224" stop-color="#6bc3b5" stop-opacity="0.439"/>
+      <stop offset="1" stop-color="#268f98"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="0.109" y1="0.856" x2="0.919" y2="1.278" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="0.5" x2="-0.039" y2="1.182" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#76cbba"/>
+      <stop offset="0.251" stop-color="#44a5a5" stop-opacity="0.373"/>
+      <stop offset="1" stop-color="#268f98" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Web_1920_7">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_7" data-name="Web 1920 – 7" clip-path="url(#clip-Web_1920_7)">
+    <rect width="1920" height="1080" fill="#76cbba"/>
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="1920" height="1080" fill="url(#linear-gradient)"/>
+    <ellipse id="Ellipse_11" data-name="Ellipse 11" cx="1169.5" cy="737.5" rx="1169.5" ry="737.5" transform="translate(-614 311)" fill="url(#radial-gradient)"/>
+    <ellipse id="Ellipse_12" data-name="Ellipse 12" cx="1169.5" cy="737.5" rx="1169.5" ry="737.5" transform="translate(475 -724)" fill="url(#radial-gradient)"/>
+    <path id="Polygon_1" data-name="Polygon 1" d="M464,0,928,768H0Z" transform="matrix(0.951, 0.309, -0.309, 0.951, 1668.372, 195.41)" fill="url(#linear-gradient-2)"/>
+    <path id="Polygon_2" data-name="Polygon 2" d="M464,0,928,768H0Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 360.167, -685.694)" opacity="0.56" fill="url(#linear-gradient-3)"/>
+    <path id="Polygon_4" data-name="Polygon 4" d="M464,0,928,980H0Z" transform="translate(580.729 475.694) rotate(25)" opacity="0.75" fill="url(#linear-gradient-4)"/>
+    <path id="Polygon_6" data-name="Polygon 6" d="M464,0,928,980H0Z" transform="matrix(0.574, 0.819, -0.819, 0.574, 90.418, 95.694)" opacity="0.75" fill="url(#linear-gradient-4)"/>
+    <path id="Polygon_5" data-name="Polygon 5" d="M464,0,928,768H0Z" transform="matrix(0.819, 0.574, -0.574, 0.819, -531.673, -485)" fill="url(#linear-gradient-6)"/>
+    <path id="Polygon_3" data-name="Polygon 3" d="M1213,0,2426,346H0Z" transform="translate(794.173 -26.132) rotate(-13)" fill="url(#linear-gradient-7)"/>
+  </g>
+</svg>
