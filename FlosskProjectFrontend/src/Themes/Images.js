@@ -24,6 +24,7 @@ import markerHospital from '../Images/hospital.png'
 import markerStore from '../Images/store.png'
 import marker from '../Images/marker.png'
 import markerBakery from '../Images/bread.png'
+import markercurrent from '../Images/current.png'
 import locationContact from '../Images/phone-call-location.png'
 // import backHome from '../Images/back-button.png'
 
@@ -56,5 +57,6 @@ export {
   markerHospital,
   markerStore,
   markerBakery,
-  gradient
+  gradient,
+  markercurrent
 }
