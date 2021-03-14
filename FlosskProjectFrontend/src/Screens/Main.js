@@ -5,7 +5,6 @@ import { useHistory, Link } from "react-router-dom";
 import { getLocationByCategory } from "../Services/locationService";
 import { addSuggestion } from "../Services/suggestionService"
 import { queryRequest } from "../Common/queryRequest";
-import Map from "../Components/Map";
 import {
   Drawer,
   ButtonPrimary,
@@ -13,7 +12,8 @@ import {
   MenuLogo,
   ButtonIcon,
   DropDown,
-  Modal1
+  Map,
+  Routing
 } from "../Components";
 import {
   CloseIcon,
@@ -292,7 +292,6 @@ function Main() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
-          // console.log("positioooooon", position);
           setPosition([position.coords.latitude, position.coords.longitude])
           setSuggestion({})
         },
@@ -307,7 +306,6 @@ function Main() {
     //   navigator.permissions
     //     .query({ name: "geolocation" })
     //     .then(function (result) {
-    //       console.log(result.state);
     //       if (result.state === "granted") {
     //         navigator.geolocation.getCurrentPosition(function (position) {
     //           setPosition([position.coords.latitude, position.coords.longitude])
@@ -327,7 +325,6 @@ function Main() {
     //         //If denied then you have to show instructions to enable location
     //       }
     //       result.onchange = function () {
-    //         console.log(result.state);
     //       };
     //     });
     // } 
@@ -347,8 +344,6 @@ function Main() {
       .then((res) => {
         const data = res?.data
         data?.map((location) => markers.current.push(location))
-        // markers.push("test")
-        console.log(markers.current)
         setLocations(markers.current)
       })
       .catch((er) => console.log(er))
@@ -525,6 +520,7 @@ function Main() {
           />
         </div>
         <Modal 
+          hideBackdrop
           opened={modalVisible.visible}
           handleClose={() => {
             setModalVisible((prev) => ({
@@ -551,7 +547,6 @@ function Main() {
               }}
             />
           </div>
-          <div className="frame">
             <div className="modalContent">
               <ModalContent
                 suggestion={suggestion}
@@ -571,24 +566,10 @@ function Main() {
                 closeDrawer={closeDrawer}
               />
             </div>
-          </div>
         </Modal>
       </Drawer>
 
-      {/* <Modal
-        mask={true}
-        maskClosable={true}
-        maskStyle={{ backgroundColor: 'pink' }}
-        className="modal3"
-        overlayClassName="modal2"
-        onClose={() => setLocationModal({
-          visible: false,
-          title: "",
-          content: undefined,
-        })}
-        isOpen={locationModal.visible}
-      > */}
-      <Modal1
+      <Modal
         opened={locationModal.visible}
         handleClose={() => setLocationModal((prev) => ({
           ...prev,
@@ -610,16 +591,19 @@ function Main() {
             }}
           />
         </div>
-        <div className="frame">
+   
           <div className="modalContent">
-            <div>{locationModal.content}</div>
-            <div className="contactLocation">
+            <span className="modalContentText">
+              {locationModal.content}
+            </span>
+          </div>
+          <div className="contactLocation">
               {locationModal.phone_no && 
                 <a href={`tel:${locationModal.phone_no}`} >
                  {/* <img src={locationContact} className="socialMediaIcons" alt="phone contact">
                   </img> */}
                    <ButtonPrimary
-                className={`buttonPrimary`}
+                className={`buttonPrimary contactButton`}
                 size="large"
                 type="default"
                 shape="rectangle"
@@ -627,18 +611,22 @@ function Main() {
               />
                 </a>}
             </div>
-            <a href={`https://maps.google.com?q=${locationModal.lat},${locationModal.long}`} target="_blank">
+            <a href={
+              `https://www.google.com/maps/dir/?api=1&origin=${position}&destination=${[locationModal.lat, locationModal.long]}&travelmode=walking`
+              // `https://www.google.com/maps/dir/?api=1`
+              // `https://maps.google.com?q=${locationModal.lat},${locationModal.long}`
+            } 
+              target="_blank"
+            >
               <ButtonPrimary
                 className={`buttonPrimary`}
                 size="large"
                 type="default"
                 shape="rectangle"
-                title={<span>Open in google maps</span>}
+                title={<span>Open in Google Maps</span>}
               />
             </a>
-          </div>
-        </div>
-      </Modal1>
+      </Modal>
     </div>
   );
 }

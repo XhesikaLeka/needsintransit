@@ -138,7 +138,7 @@
 .buttonPrimary{
   color:  #268f98 !important;
   border-radius: 30px !important;
-  width: 280px !important;
+  width: 100% !important;
   margin-top: 10px !important;
   border-color: #76CBBA !important;
   align-self: center !important;
@@ -194,6 +194,11 @@
   background: #F4FBFC !important;
   box-shadow: 0 3px 6px rgba(38,143,152, 0.3) !important;
   width: 100% !important;
+}
+.contactButton {
+  color:  #ffffff !important;
+  background-color:  #268f98 !important;
+  border-color: #268f98 !important;
 }
 .mainMenu .buttonPrimary span{
   font-weight: 600;
@@ -263,11 +268,12 @@
 
 .frame {
   height: calc(100% - 60px);
-  overflow-y: overlay;
+  /* overflow-y: auto; */
   margin-top: 30px;
   display: flex;
   padding: 0px 5px;
   box-sizing: border-box;
+  flex-direction: column;
 }
 
 .ReactModal__Overlay--after-open {
@@ -313,8 +319,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  flex: 1;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 30px;
   margin-bottom: 8px;
+  padding: 8px 8px;
+}
+.modalContentText{
+  height: 100%;
 }
 .categoriesDropDown{
   width: 100% !important;
@@ -369,9 +381,6 @@ li {
 .landPage-footer{
   color: black !important;
   padding: 9px 20px !important;
-}
-body{
-  overflow: auto !important;
 }
 .landPage-content{
   max-width: 1000px;

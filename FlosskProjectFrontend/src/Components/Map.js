@@ -3,6 +3,18 @@ import { Marker, Popup, TileLayer, MapContainer, useMap, useMapEvent } from "rea
 import { MarkerIcon, marker } from '../Themes/Images'
 import L from 'leaflet';
 
+const Route = L?.Routing?.control({
+    waypoints: [
+      L.latLng(38.7436056, -9.2304153),
+      L.latLng(38.5334477, -0.1312811)
+    ],
+    router: new L.Routing.osrmv1({
+      // language: 'en',
+      // profile: ""
+    }),
+    // geocoder: L.Control?.Geocoder?.nominatim({})
+  })
+
 const MapContent = (
   {
     mapCenter,
@@ -32,6 +44,7 @@ const MapContent = (
   useEffect(() => {
     if (mapCenter) {
       map.flyTo(mapCenter, 13);
+      // Route?.addTo(map)
     }
   }, [mapCenter])
 
@@ -58,7 +71,6 @@ const MapContent = (
           position={[item?.lat, item?.long]}
           eventHandlers={{
             click: (e) => {
-              console.log(item?.contact?.phone_no)
               setLocationModal({
                 visible: true,
                 title: item?.locationname,
@@ -78,7 +90,6 @@ const MapContent = (
       >
         <Popup>Your location</Popup>
       </Marker>
-
     </>
   );
 };
@@ -102,6 +113,7 @@ const Map = (
       scrollWheelZoom={true}
       className="map"
     >
+      <>
       <MapContent
         mapCenter={mapCenter}
         markers={markers}
@@ -113,6 +125,7 @@ const Map = (
         setEditable={setEditable}
         openDrawerAndSuggest={openDrawerAndSuggest}
       />
+      </>
     </MapContainer>
   );
 };
